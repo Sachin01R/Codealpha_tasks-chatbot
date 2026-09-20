@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova | AI FAQ Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fas fa-robot"></i>
+                <span>TechNova AI</span>
+            </div>
+            
+            <div class="stats-card">
+                <h4>Session Stats</h4>
+                <div class="stat-item"><span>FAQs Loaded:</span> <span id="faq-count">0</span></div>
+                <div class="stat-item"><span>Categories:</span> <span id="cat-count">0</span></div>
+                <div class="stat-item"><span>Answered:</span> <span id="session-answered">0</span></div>
+            </div>
+
+            <div class="about-section">
+                <h4>About this Chatbot</h4>
+                <p>This assistant uses NLP techniques (TF-IDF & Cosine Similarity) to match your natural language questions with our knowledge base.</p>
+            </div>
+
+            <button id="clear-chat" class="btn-secondary"><i class="fas fa-trash"></i> Clear Conversation</button>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-wrapper">
+            <header class="chat-header">
+                <div>
+                    <h1>AI FAQ Assistant</h1>
+                    <p>Ask me anything about our services.</p>
+                </div>
+                <div class="status-indicator">
+                    <span class="dot"></span> Online
+                </div>
+            </header>
+
+            <div id="chat-display" class="chat-display">
+                <!-- Messages will appear here -->
+                <div class="message bot-msg">
+                    Hello! I'm the TechNova Assistant. How can I help you today?
+                    <span class="time">Just now</span>
+                </div>
+            </div>
+
+            <div class="suggestions" id="suggestions">
+                <!-- Suggested chips -->
+            </div>
+
+            <div id="typing-indicator" class="typing hidden">
+                <span></span><span></span><span></span>
+            </div>
+
+            <form id="chat-form" class="input-area">
+                <input type="text" id="user-input" placeholder="Type your question here..." autocomplete="off">
+                <button type="submit" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="nlp-engine.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
